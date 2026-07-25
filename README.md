@@ -41,10 +41,31 @@ ConeTec’s Junior FP&A & Data Analyst role sits at the intersection of **financ
 - **Power Automate**: schedule the monthly pack to Teams/Email.
 - **Copilot**: ground prompts on the certified dataset — never free-form over raw GL dumps.
 
+## AI (Hugging Face)
+
+The **AI Analyst** page calls Hugging Face Inference Providers (`router.huggingface.co`) with **Qwen2.5-7B-Instruct**.
+
+Architecture (interview talking point):
+
+1. TypeScript metrics engine builds a **fact pack** (P&L, variances, ops KPIs, drivers).
+2. The model is instructed to **only narrate those facts** — no invented numbers.
+3. If `HF_TOKEN` is missing or the provider errors, the app falls back to a deterministic analyst.
+
+Set secrets (never commit):
+
+```bash
+# .env.local
+HF_TOKEN=hf_***
+HF_MODEL=Qwen/Qwen2.5-7B-Instruct:fastest
+```
+
+On Vercel: Project → Settings → Environment Variables → `HF_TOKEN`, `HF_MODEL`.
+
 ## Stack
 
 - Next.js 16 (App Router) + TypeScript + Tailwind CSS v4
 - Recharts
+- Hugging Face Inference (chat completions)
 - Seeded multi-entity P&L + ops metrics (`src/data/seed.ts`)
 - Pure TypeScript metrics engine (`src/lib/metrics.ts`) — easy to unit test and explain
 
