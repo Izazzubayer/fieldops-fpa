@@ -25,10 +25,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
-      <aside className="lg:w-64 shrink-0 border-b lg:border-b-0 lg:border-r border-[var(--border)] bg-[var(--surface)]">
+      <aside className="lg:w-64 shrink-0 border-b lg:border-b-0 lg:border-r border-[var(--border)] bg-[var(--surface)] flex flex-col">
         <div className="px-5 py-5 border-b border-[var(--border)]">
           <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--muted)]">
-            Open source demo
+            Finance platform
           </p>
           <h1 className="mt-1 font-[family-name:var(--font-display)] text-xl text-[var(--ink)] leading-tight">
             FieldOps FP&A
@@ -37,7 +37,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             {COMPANY.tagline}
           </p>
         </div>
-        <nav className="flex lg:flex-col gap-1 p-3 overflow-x-auto">
+        <nav className="flex lg:flex-col gap-1 p-3 overflow-x-auto flex-1">
           {NAV.map(({ href, label, icon: Icon }) => {
             const active = pathname === href;
             return (
@@ -57,12 +57,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             );
           })}
         </nav>
-        <div className="hidden lg:block px-5 py-4 mt-auto border-t border-[var(--border)]">
-          <p className="text-[11px] uppercase tracking-wider text-[var(--muted)]">
-            MIT · Open source
-          </p>
+        <div className="hidden lg:block px-5 py-4 border-t border-[var(--border)]">
+          <div className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--positive)]" />
+            <p className="text-[11px] text-[var(--muted)]">Workspace connected</p>
+          </div>
           <p className="mt-2 text-[11px] text-[var(--muted)] leading-relaxed">
-            Synthetic multi-entity field-services data for interview demos. Not affiliated with ConeTec or any employer.
+            {COMPANY.name} · Fiscal YTD as of {COMPANY.asOf}
           </p>
         </div>
       </aside>

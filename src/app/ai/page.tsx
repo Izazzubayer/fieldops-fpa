@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Loader2, Sparkles, ShieldCheck } from "lucide-react";
 import { FilterBar, defaultFilterState, type FilterState } from "@/components/FilterBar";
 import { PageHeader, Panel } from "@/components/ui";
+import { Markdown } from "@/components/Markdown";
 import { buildNarrative } from "@/lib/ai";
 
 const SUGGESTIONS = [
@@ -75,9 +76,9 @@ export default function AiPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="AI & finance transformation · Hugging Face"
+        eyebrow="AI insights"
         title="AI Analyst"
-        description="Open-model FP&A analyst via Hugging Face Inference. The metrics engine builds a fact pack; the model may only narrate those numbers — the same pattern you'd use with Copilot over a governed Power BI semantic model."
+        description="Generate management-ready variance commentary and ask questions over your live FP&A fact pack. Insights stay grounded in the same numbers as your dashboards."
       />
 
       <FilterBar value={filters} onChange={setFilters} />
@@ -85,21 +86,19 @@ export default function AiPage() {
       <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--muted)]">
         <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1">
           <ShieldCheck size={13} className="text-[var(--accent)]" />
-          Grounded on metrics fact pack
+          Grounded on metrics
         </span>
         {meta && (
           <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1">
             <Sparkles size={13} className="text-[var(--accent)]" />
-            {meta.source === "huggingface"
-              ? `Hugging Face · ${meta.model ?? "model"}`
-              : "Deterministic fallback"}
+            {meta.source === "huggingface" ? "AI model connected" : "Rules engine"}
           </span>
         )}
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4">
         <Panel
-          title="AI monthly brief"
+          title="Monthly brief"
           action={
             <button
               type="button"
@@ -112,19 +111,14 @@ export default function AiPage() {
               ) : (
                 <Sparkles size={13} />
               )}
-              Generate with HF
+              Generate
             </button>
           }
         >
           {brief ? (
-            <pre className="whitespace-pre-wrap font-[family-name:var(--font-body)] text-sm text-[var(--ink-soft)] leading-relaxed">
-              {brief}
-            </pre>
+            <Markdown>{brief}</Markdown>
           ) : (
             <>
-              <p className="text-[11px] uppercase tracking-wider text-[var(--muted)] mb-2">
-                Seed narrative (deterministic) — click Generate for Hugging Face rewrite
-              </p>
               <p className="text-base font-medium text-[var(--ink)] leading-snug">
                 {seed.headline}
               </p>
@@ -136,6 +130,9 @@ export default function AiPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 text-[11px] text-[var(--muted)]">
+                Baseline summary from the metrics engine. Generate to draft a full leadership brief.
+              </p>
             </>
           )}
         </Panel>
@@ -177,19 +174,14 @@ export default function AiPage() {
             ))}
           </div>
           {answer && (
-            <div className="mt-4 rounded-md border border-[var(--border)] bg-[var(--bg-elevated)] p-4 text-sm text-[var(--ink-soft)] leading-relaxed animate-fade-in whitespace-pre-wrap">
-              {answer}
+            <div className="mt-4 rounded-md border border-[var(--border)] bg-[var(--bg-elevated)] p-4 animate-fade-in">
+              <Markdown>{answer}</Markdown>
             </div>
           )}
           {error && <p className="mt-3 text-sm text-[var(--negative)]">{error}</p>}
           {meta?.note && (
             <p className="mt-3 text-[11px] text-[var(--muted)] leading-relaxed">{meta.note}</p>
           )}
-          <p className="mt-4 text-[11px] text-[var(--muted)] leading-relaxed">
-            Interview angle: AI drafts the pack; humans validate drivers. Same architecture as
-            Microsoft Copilot / Power BI Copilot over trusted finance data — here via Hugging Face
-            open models for a transparent, open-source portfolio story.
-          </p>
         </Panel>
       </div>
     </div>

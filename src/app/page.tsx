@@ -28,7 +28,7 @@ export default function OverviewPage() {
       <PageHeader
         eyebrow={`${COMPANY.name} · As of ${COMPANY.asOf}`}
         title="Executive Overview"
-        description="Multi-entity revenue, margin, and EBITDA performance for a fictional geotechnical field-services company — the FP&A view you’d rebuild in Power BI for ConeTec-style operations."
+        description="Multi-entity revenue, margin, and EBITDA for FieldOps Geotechnics — track performance against budget, forecast, and prior year."
       />
 
       <FilterBar value={filters} onChange={setFilters} />
@@ -101,19 +101,19 @@ export default function OverviewPage() {
             ))}
           </ul>
         </Panel>
-        <Panel title="Interview talking points">
+        <Panel title="Watchlist">
           <ol className="space-y-3 text-sm text-[var(--ink-soft)] list-decimal list-inside leading-relaxed">
             <li>
-              <strong className="text-[var(--ink)]">Variance story:</strong> Prairies Drilling
-              weather drag vs Pacific CPT corridor upside — volume first, then cost.
+              <strong className="text-[var(--ink)]">Variance focus:</strong> Prairies Drilling
+              weather drag vs Pacific CPT corridor upside — diagnose volume before cost.
             </li>
             <li>
-              <strong className="text-[var(--ink)]">Ops → finance:</strong> utilization and idle
+              <strong className="text-[var(--ink)]">Ops linkage:</strong> utilization and idle
               hours are leading indicators for margin and cash timing.
             </li>
             <li>
-              <strong className="text-[var(--ink)]">AI in FP&A:</strong> auto-draft the monthly
-              narrative, then humans validate drivers — Copilot / Power BI AI in production.
+              <strong className="text-[var(--ink)]">Next action:</strong> draft the monthly pack
+              in AI Analyst, then validate drivers with region leads before close.
             </li>
           </ol>
         </Panel>

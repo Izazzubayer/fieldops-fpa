@@ -42,7 +42,7 @@ export default function PackPage() {
       <PageHeader
         eyebrow="Reporting automation"
         title="Monthly Pack"
-        description="One-click management briefing — the automation story: less copy-paste from Excel into slides, more time on recommendations. Export Markdown for email or paste into PowerPoint."
+        description="Build a management-ready briefing in one click. Copy or download for email, Slack, or your monthly business review deck."
       />
 
       <FilterBar value={filters} onChange={setFilters} />

@@ -26,9 +26,9 @@ export default function DriversPage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Ops → finance linkage"
+        eyebrow="Operational performance"
         title="Ops Drivers"
-        description="Field utilization, backlog, and equipment idle time as leading indicators for revenue variance, margin, and working capital — how FP&A partners with operations."
+        description="Field utilization, backlog, and equipment idle time as leading indicators for revenue variance, margin, and working capital."
       />
 
       <FilterBar value={filters} onChange={setFilters} showBasis={false} />
@@ -92,13 +92,11 @@ export default function DriversPage() {
         </Panel>
       </div>
 
-      <Panel title="How to talk about this in the interview">
+      <Panel title="How to use this view">
         <p className="text-sm text-[var(--ink-soft)] leading-relaxed">
-          FP&A does not stop at the P&amp;L. For a geotech / site-investigation business, crew
-          utilization and remobilization drive both revenue recognition and cost variance.
-          Idle hours foreshadow working-capital strain; backlog quality foreshadows forecast
-          confidence. In production you would model this in Power BI with relationships from
-          ERP project actuals to a date table — same grain as this demo dataset.
+          Pair utilization and idle hours with Variance Lab to separate volume from cost. Soft
+          utilization often foreshadows margin pressure and slower cash conversion; backlog quality
+          informs forecast confidence for the next close cycle.
         </p>
       </Panel>
     </div>

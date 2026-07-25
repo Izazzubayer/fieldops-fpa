@@ -22,9 +22,9 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FieldOps FP&A — Finance command center demo",
+  title: "FieldOps FP&A",
   description:
-    "Open-source FP&A demo: variance analysis, multi-entity KPIs, ops drivers, and AI-assisted management briefs for field-services finance.",
+    "Multi-entity FP&A platform for field-services finance — variance analysis, ops drivers, and AI-assisted management briefs.",
 };
 
 export default function RootLayout({

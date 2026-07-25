@@ -15,7 +15,7 @@ export function buildFactPack(filters: Filters) {
   const deterministic = buildNarrative(filters);
 
   return {
-    company: "FieldOps Geotechnics (fictional demo)",
+    company: "FieldOps Geotechnics",
     asOf: filters.period,
     asOfLabel: periodLabel(filters.period),
     scope: filters.mode,
@@ -74,7 +74,7 @@ export function buildFactPack(filters: Filters) {
 }
 
 export function systemPrompt(): string {
-  return `You are a Junior FP&A analyst for a multi-entity geotechnical / field-services company.
+  return `You are the FieldOps FP&A AI Analyst for a multi-entity geotechnical / field-services company.
 You write concise management commentary for finance leadership.
 
 HARD RULES:
@@ -83,8 +83,8 @@ HARD RULES:
 - Lead with the decision-relevant story: what moved, why (volume/rate/mix/cost), what to do next.
 - Tie ops metrics (utilization, idle hours, backlog) to financial outcomes when relevant.
 - Tone: professional, direct, no hype, no emojis.
-- If the question cannot be answered from the fact pack, say what is missing rather than guessing.
-- This is a demo dataset; do not claim affiliation with any real employer.`;
+- Use light Markdown (headings, bullets, bold sparingly for labels only).
+- If the question cannot be answered from the fact pack, say what is missing rather than guessing.`;
 }
 
 export function briefUserPrompt(factPack: ReturnType<typeof buildFactPack>): string {
@@ -149,7 +149,7 @@ export async function callHuggingFaceChat(
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Hugging Face error ${res.status}: ${text.slice(0, 400)}`);
+    throw new Error(`AI provider error ${res.status}: ${text.slice(0, 400)}`);
   }
 
   const data = (await res.json()) as {
@@ -158,7 +158,7 @@ export async function callHuggingFaceChat(
   };
   const content = data.choices?.[0]?.message?.content?.trim();
   if (!content) {
-    throw new Error("Empty response from Hugging Face");
+    throw new Error("Empty response from AI provider");
   }
   return { content, model: data.model ?? HF_MODEL };
 }

@@ -9,10 +9,9 @@ export const SERVICE_LINES: ServiceLine[] = [
   "Consulting",
 ];
 
-/** Demo company — fictional field-services / geotech FP&A dataset */
 export const COMPANY = {
   name: "FieldOps Geotechnics",
-  tagline: "In-situ testing · Multi-entity FP&A demo",
+  tagline: "In-situ testing · Multi-entity FP&A",
   asOf: "2026-06",
   fiscalYearStartMonth: 1,
 } as const;
@@ -90,7 +89,7 @@ function buildFinancials(): FinancialRow[] {
           growth *
           noise;
 
-        // Intentional story beats for interview demo (2026 H1)
+        // Intentional variance story beats (2026 H1)
         let story = 1;
         let budgetBias = 1.02;
         let forecastBias = 1.0;

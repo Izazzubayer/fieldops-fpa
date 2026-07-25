@@ -57,7 +57,7 @@ export async function POST(req: Request) {
       source: "deterministic",
       model: null,
       content: fallback,
-      note: "HF_TOKEN not set — served rule-based analyst.",
+      note: "AI model not configured — served metrics baseline.",
     });
   }
 
@@ -83,13 +83,13 @@ export async function POST(req: Request) {
       content,
     });
   } catch (err) {
-    const message = err instanceof Error ? err.message : "Unknown HF error";
+    const message = err instanceof Error ? err.message : "Unknown model error";
     return NextResponse.json({
       ok: true,
       source: "deterministic",
       model: null,
       content: fallback,
-      note: `Fell back to rule-based analyst (${message})`,
+      note: `Served metrics baseline (${message})`,
     });
   }
 }

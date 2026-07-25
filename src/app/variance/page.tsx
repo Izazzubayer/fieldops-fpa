@@ -20,9 +20,9 @@ export default function VariancePage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Core interview demo"
+        eyebrow="Performance analysis"
         title="Variance Lab"
-        description={`Actual vs ${basisLabel} with drill-down into volume, rate, mix, and cost drivers — the same workflow as a Power BI variance matrix plus DAX, built here in TypeScript for transparency.`}
+        description={`Actual vs ${basisLabel} with drill-down into volume, rate, mix, and cost drivers across regions and service lines.`}
       />
 
       <FilterBar value={filters} onChange={setFilters} />
