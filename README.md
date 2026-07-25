@@ -4,9 +4,10 @@
 
 > Synthetic demo data only. Not affiliated with ConeTec or any employer.
 
-## Live demo
+## Links
 
-After deploy: `https://your-app.vercel.app`
+- **Live demo:** https://fieldops-fpa.vercel.app
+- **GitHub:** https://github.com/Izazzubayer/fieldops-fpa
 
 ```bash
 npm install
