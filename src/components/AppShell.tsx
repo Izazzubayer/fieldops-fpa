@@ -31,7 +31,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             Finance platform
           </p>
           <h1 className="mt-1 font-[family-name:var(--font-display)] text-xl text-[var(--ink)] leading-tight">
-            FieldOps FP&A
+            FieldOps Financial Planning & Analysis
           </h1>
           <p className="mt-1 text-xs text-[var(--muted)] leading-snug">
             {COMPANY.tagline}
@@ -47,8 +47,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 className={clsx(
                   "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm whitespace-nowrap transition-colors",
                   active
-                    ? "bg-[var(--accent-soft)] text-[var(--accent)] font-medium"
-                    : "text-[var(--ink-soft)] hover:bg-[var(--bg-elevated)]",
+                    ? "bg-[var(--accent)] text-white font-medium"
+                    : "text-[var(--ink-soft)] hover:bg-[var(--accent-soft)]",
                 )}
               >
                 <Icon size={16} strokeWidth={1.75} />

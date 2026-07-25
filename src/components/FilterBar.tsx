@@ -32,7 +32,7 @@ export function FilterBar({
   showBasis?: boolean;
 }) {
   return (
-    <div className="flex flex-wrap items-end gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 sm:p-4">
+    <div className="flex flex-wrap items-end gap-3 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-3 sm:p-4 shadow-[0_1px_0_rgba(18,38,28,0.04)]">
       <label className="flex flex-col gap-1 text-[11px] uppercase tracking-wider text-[var(--muted)]">
         As of
         <select

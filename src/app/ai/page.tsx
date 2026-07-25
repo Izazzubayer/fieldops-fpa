@@ -104,7 +104,7 @@ export default function AiPage() {
               type="button"
               onClick={() => void runAnalyze("brief")}
               disabled={loading !== null}
-              className="inline-flex items-center gap-1.5 rounded-md bg-[var(--accent)] px-3 py-1.5 text-xs font-medium text-white hover:opacity-90 disabled:opacity-60"
+              className="inline-flex items-center gap-1.5 rounded-md bg-[var(--accent)] px-3 py-1.5 text-xs font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-60 transition-colors"
             >
               {loading === "brief" ? (
                 <Loader2 size={13} className="animate-spin" />
@@ -116,7 +116,7 @@ export default function AiPage() {
           }
         >
           {brief ? (
-            <Markdown>{brief}</Markdown>
+            <Markdown sectioned>{brief}</Markdown>
           ) : (
             <>
               <p className="text-base font-medium text-[var(--ink)] leading-snug">
@@ -154,7 +154,7 @@ export default function AiPage() {
             <button
               type="submit"
               disabled={loading !== null}
-              className="inline-flex items-center gap-1.5 rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 disabled:opacity-60"
+              className="inline-flex items-center gap-1.5 rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-60 transition-colors"
             >
               {loading === "ask" ? <Loader2 size={14} className="animate-spin" /> : null}
               Ask
