@@ -16,14 +16,7 @@ export function KpiCard({
   hint?: string;
 }) {
   return (
-    <div
-      className={clsx(
-        "rounded-lg border px-4 py-3.5",
-        tone === "up" && "border-[var(--positive-border)] bg-[var(--positive-soft)]",
-        tone === "down" && "border-[var(--negative-border)] bg-[var(--negative-soft)]",
-        tone === "flat" && "border-[var(--border)] bg-[var(--surface)]",
-      )}
-    >
+    <div className="rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-3.5">
       <p className="text-[11px] uppercase tracking-wider text-[var(--muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-mono)] text-2xl text-[var(--ink)] tabular-nums tracking-tight">
         {value}
@@ -88,8 +81,8 @@ export function Panel({
   action?: React.ReactNode;
 }) {
   return (
-    <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] overflow-hidden shadow-[0_1px_0_rgba(18,38,28,0.04)]">
-      <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] bg-[var(--accent-soft)]/40 px-4 py-3">
+    <section className="rounded-lg border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+      <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] px-4 py-3">
         <h3 className="text-sm font-medium text-[var(--ink)]">{title}</h3>
         {action}
       </div>

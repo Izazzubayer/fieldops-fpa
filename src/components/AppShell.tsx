@@ -47,8 +47,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 className={clsx(
                   "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm whitespace-nowrap transition-colors",
                   active
-                    ? "bg-[var(--accent)] text-white font-medium"
-                    : "text-[var(--ink-soft)] hover:bg-[var(--accent-soft)]",
+                    ? "bg-[var(--accent-soft)] text-[var(--accent)] font-medium"
+                    : "text-[var(--ink-soft)] hover:bg-[var(--bg-elevated)]",
                 )}
               >
                 <Icon size={16} strokeWidth={1.75} />

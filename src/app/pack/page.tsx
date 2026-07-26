@@ -59,7 +59,7 @@ export default function PackPage() {
         <button
           type="button"
           onClick={downloadPack}
-          className="inline-flex items-center gap-2 rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--accent-hover)] transition-colors"
+          className="inline-flex items-center gap-2 rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity"
         >
           <Download size={16} />
           Download .md
